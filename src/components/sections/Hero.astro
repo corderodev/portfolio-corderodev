@@ -1,0 +1,44 @@
+---
+import MailCopy from '@components/MailCopy.astro'
+import { LinkedIn } from '@icons/Linkedin.tsx'
+import { ResumeIcon } from '@icons/Resume.jsx'
+import { basics } from '@cv';
+---
+
+<section
+  class="min-h-[60dvh] w-full max-w-4xl mx-auto flex flex-col place-content-center py-20"
+>
+  <div class="mb-6 flex flex-col-reverse gap-5">
+    <div>
+      <h2
+        class="mb-4 text-3xl sm:text-5xl font-bold text-yellow-300 text-balance"
+      >
+        Daniel Cordero
+      </h2>
+      <h3 class="text-3xl sm:text-5xl font-bold text-yellow-300 text-balance">
+        Desarrollador Web
+      </h3>
+    </div>
+    <a
+      href={basics.profiles[0].url}
+      target="_blank"
+      class="flex flex-wrap items-center gap-1 border border-zinc-400/20 w-fit rounded-md px-2 py-0.5 hover:bg-zinc-800"
+    >
+      <LinkedIn className="size-5 mb-0.5" />
+      <p class="text-wrap">En búsqueda de práctica</p>
+    </a>
+  </div>
+  <p class="w-full max-w-[80ch] mt-4 mb-5 text-pretty text-lg">
+    {basics.summary}
+  </p>
+  <div class="flex flex-wrap gap-4">
+    <MailCopy email="daniel@corderodev.com" name="Daniel Cordero" />
+    <a
+      href="/resume"
+      class="rounded-md border border-zinc-400/20 flex gap-1 items-center w-fit px-4 py-0.5 hover:bg-zinc-800"
+    >
+      <ResumeIcon className="size-5 mb-0.5" />
+      Ver Currículum
+    </a>
+  </div>
+</section>
