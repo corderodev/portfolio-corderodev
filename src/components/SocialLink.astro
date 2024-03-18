@@ -1,0 +1,19 @@
+---
+interface Props {
+  network: string
+  username: string
+  url: string
+}
+
+const { network, username, url } = Astro.props
+---
+
+<a
+  href={url}
+  rel="noopener noreferrer"
+  target="_blank"
+  class="transition hover:text-yellow-300"
+  title={`Visitar el perfil de ${username} en ${network}`}
+>
+  <slot />
+</a>
