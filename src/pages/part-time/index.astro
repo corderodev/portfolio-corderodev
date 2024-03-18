@@ -1,0 +1,33 @@
+---
+import Resume from '@layouts/Resume.astro'
+import CvHero from '@components/resume/CvHero.astro'
+import CvExperience from '@components/resume/CvExperience.astro'
+import CvEducation from '@components/resume/CvEducation.astro'
+import CvSkills from '@components/resume/CvSkills.astro'
+import CvLang from '@components/resume/CvLang.astro'
+
+import { basics, work, education, skills, languages } from '@cv-part-time';
+---
+
+<Resume title="Daniel Cordero - Desarrollador Web">
+	<main class="py-10">
+		<CvHero basics={basics} />
+		<CvExperience work={work} />
+		<CvEducation education={education} />
+		<CvSkills skills={skills} />
+		<CvLang languages={languages} />
+	</main>
+</Resume>
+
+<style is:global>
+	@media print {
+		main {
+			padding: 30px 0 !important;
+			color: black !important;
+		}
+		#CvSkills {
+			padding: 30px 0 0 !important;
+			page-break-before: always;
+		}
+	}
+</style>
