@@ -1,0 +1,33 @@
+---
+interface Props {
+  certificates: {
+    name: string;
+    url: string;
+    issuer: string;
+    date: string;
+  }[];
+}
+
+const { certificates } = Astro.props;
+---
+
+<section id="CvCertificates">
+  <h2 class="text-xl font-semibold lg:text-2xl">Certificados</h2>
+  <div class="grid grid-cols-1 min-[600px]:grid-cols-2 gap-y-10">
+    {
+      certificates.map(({ name, url, issuer, date }) => {
+        const year = new Date(date).getFullYear()
+        return (
+          <a href={url} class="group w-fit" target="_blank">
+            <h3 class="text-sm font-bold group-hover:underline decoration-zinc-900 underline-offset-4">
+              {name}
+            </h3>
+            <p class="text-sm">
+              {issuer} - <time>{year}</time>
+            </p>
+          </a>
+        )
+      })
+    }
+  </div>
+</section>
