@@ -1,0 +1,44 @@
+---
+interface Props {
+  work: {
+    name: string;
+    startDate: string;
+    endDate: string;
+    position: string;
+    summary: string;
+  }[];
+}
+
+const { work } = Astro.props
+---
+
+<section id="CvExperience">
+  <h2 class="text-xl font-semibold lg:text-2xl">Experiencia</h2>
+  {
+    work.map(({ name, startDate, endDate, position, summary }) => {
+      const startYear = new Date(startDate).toLocaleString('es-ES', {
+        year: 'numeric',
+        month: 'short',
+      })
+      const endYear =
+        endDate != null
+          ? new Date(endDate).toLocaleString('es-ES', {
+              year: 'numeric',
+              month: 'short',
+            })
+          : 'Actual'
+      const years = `${startYear} - ${endYear}`
+
+      return (
+        <div class="mb-4 last-of-type:mb-0">
+          <header class="flex flex-wrap justify-between items-end">
+            <h3 class="font-bold">{name}</h3>
+            <time class="text-zinc-600 text-sm my-1">{years}</time>
+          </header>
+          <p class="font-medium text-sm text-zinc-600 my-0.5">{position}</p>
+          <p class="text-zinc-600 text-sm">{summary}</p>
+        </div>
+      )
+    })
+  }
+</section>
