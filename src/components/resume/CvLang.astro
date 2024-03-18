@@ -1,0 +1,26 @@
+---
+interface Props {
+  languages: {
+    language: string;
+    fluency: string;
+  }[];
+}
+
+const { languages } = Astro.props;
+---
+
+<section id="CvLang">
+			<h2 class="text-xl font-semibold lg:text-2xl">Idiomas</h2>
+			<div class="grid gap-4 sm:grid-cols-2 sm:gap-0">
+				{
+					languages.map((language) => (
+						<div>
+							<h3>
+								<span class="font-bold">{language.language}</span> -{' '}
+								{language.fluency}
+							</h3>
+						</div>
+					))
+				}
+			</div>
+		</section>
