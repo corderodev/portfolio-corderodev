@@ -9,6 +9,9 @@
       "@layouts/*": ["src/layouts/*"],
       "@icons/*": ["src/icons/*"],
       "@assets/*": ["public/assets/*"],
+      "@cv": ["./cv.json"],
+      "@cv-part-time": ["./cv-part-time.json"],
+      "@blog": ["./blog.json"]
     }
   }
 }
