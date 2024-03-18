@@ -1,0 +1,64 @@
+---
+import { Html } from '@icons/skills/Html.tsx'
+import { Css } from '@icons/skills/Css.tsx'
+import { Javascript } from '@icons/skills/Javascript.tsx'
+import { Typescript } from '@icons/skills/TypeScriptIcon'
+import { React } from '@icons/skills/React.tsx'
+import { Node } from '@icons/skills/Node.tsx'
+import { Git } from '@icons/skills/Git.tsx'
+import { Github } from '@icons/skills/Github.tsx'
+import { Tailwind } from '@icons/skills/Tailwind.tsx'
+import { Next } from '@icons/skills/Next.tsx'
+import { AstroIcon } from '@icons/skills/Astro.tsx'
+import { Angular } from '@icons/skills/Angular.tsx'
+import { Postgresql } from '@icons/skills/Postgresql.tsx'
+
+const SKILLS_ICONS: Record<string, any> = {
+	Html,
+	Css,
+	Javascript,
+	Typescript,
+	Angular,
+	React,
+	Next,
+	AstroIcon,
+	Tailwind,
+	Node,
+	Postgresql,
+	Git,
+	Github,
+}
+
+interface Props {
+  skills: { name: string }[];
+}
+
+const { skills } = Astro.props
+---
+
+<section id="CvSkills">
+  <h2 class="text-xl font-semibold lg:text-2xl">Conocimientos</h2>
+  <ul class="flex flex-wrap gap-x-8 gap-y-4">
+    {
+      skills.map(({ name }) => {
+        const iconName =
+          name === 'Next.js'
+            ? 'Next'
+            : name === 'Astro'
+              ? 'AstroIcon'
+              : name === 'Node.js'
+                ? 'Node'
+                : name === 'Tailwind Css'
+                  ? 'Tailwind'
+                  : name
+        const Icon = SKILLS_ICONS[iconName]
+        return (
+          <li class="flex items-center space-x-2 text-zinc-900">
+            {Icon && <Icon class="size-[14px] fill-zinc-900" />}
+            <span class="text-sm font-bold uppercase mt-0.5">{name}</span>
+          </li>
+        )
+      })
+    }
+  </ul>
+</section>
