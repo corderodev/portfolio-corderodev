@@ -1,0 +1,34 @@
+---
+interface Props {
+  education: {
+    institution: string;
+    startDate: string;
+    endDate: string;
+    area: string;
+  }[];
+}
+
+const { education } = Astro.props;
+---
+
+<section class="CvEducation">
+  <h2 class="text-xl font-semibold lg:text-2xl">Education</h2>
+  {
+    education.map(({ institution, startDate, endDate, area }) => {
+      const startYear = new Date(startDate).getFullYear()
+      const endYear =
+        endDate != null ? new Date(endDate).getFullYear() : 'Actual'
+      const years = `${startYear} - ${endYear}`
+
+      return (
+        <div>
+          <header class="flex flex-wrap justify-between items-end">
+            <h3 class="font-bold">{institution}</h3>
+            <time class="text-zinc-600 text-sm my-1">{years}</time>
+          </header>
+          <p class="text-zinc-600 text-sm">{area}</p>
+        </div>
+      )
+    })
+  }
+</section>
