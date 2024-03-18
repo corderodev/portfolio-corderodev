@@ -1,0 +1,24 @@
+---
+import { certificates } from '@cv';
+---
+
+<section class="my-20">
+  <h2 class="text-2xl font-semibold lg:text-3xl">Certificados</h2>
+  <div class="mt-10 grid grid-cols-1 min-[600px]:grid-cols-2 gap-y-10">
+    {
+      certificates.map(({ name, url, issuer, date }) => {
+        const year = new Date(date).getFullYear()
+        return (
+          <a href={url} class="group w-fit" target="_blank">
+            <h3 class="text-lg group-hover:underline decoration-yellow-200 underline-offset-4">
+              {name}
+            </h3>
+            <p class="text-sm">
+              {issuer} - <time>{year}</time>
+            </p>
+          </a>
+        )
+      })
+    }
+  </div>
+</section>
