@@ -1,0 +1,34 @@
+---
+const { email, name } = Astro.props
+---
+
+<script>
+  const emailInput = document.querySelector("input");
+  const tooltip = document.getElementById("tooltip")
+
+  const copyToClipboard = (text: string) => {
+    navigator.clipboard.writeText(text)
+    if (tooltip) {
+      tooltip.style.display = "block"
+      setTimeout(() => {
+        tooltip.style.display = "none"
+      }, 2000)
+    }
+  }
+
+  emailInput?.addEventListener("click", () => {
+    copyToClipboard(emailInput.value)
+  })
+</script>
+
+<div class="relative inline-block w-fit">
+  <input
+    id="emailInput"
+    type="text"
+    readonly
+    value={email}
+    title={`Correo electrónico de ${name}`}
+    class="appearance-none h-8 px-3 text-center rounded-md focus:outline-none focus:ring-1 focus:ring-yellow-400 bg-transparent hover:bg-zinc-800 border border-zinc-400/20 cursor-pointer"
+  />
+  <span id="tooltip" class="tooltip hidden absolute top-[120%] left-1/2 -translate-x-1/2 px-3 py-1 text-center text-white rounded-md bg-zinc-800 backdrop-blur">Copiado</span>
+</div>
