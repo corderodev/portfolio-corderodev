@@ -17,7 +17,7 @@ export const Projects = () => {
   }
 
   return (
-    <section id="projects" class='min-h-[55dvh]'>
+    <section id="portfolio" class='min-h-[55dvh]'>
       <div>
         <h2 class='text-2xl font-semibold lg:text-3xl'>Portafolio</h2>
         <div class='flex py-4 mt-4 overflow-x-auto overflow-y-hidden border-gray-700'>
