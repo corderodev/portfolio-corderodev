@@ -1,15 +1,33 @@
 ---
 import MailCopy from '@components/MailCopy.astro'
 import { ResumeIcon } from '@icons/Resume.jsx'
-import { basics } from '@cv';
+import { basics } from '@cv'
+import LookingJob from '@components/LookingJob.astro'
+
+interface Props {
+  lookingJob: boolean
+}
+
+const { lookingJob } = Astro.props
 ---
 
 <section
   class="min-h-[50dvh] w-full mx-auto flex flex-col place-content-center py-20"
 >
-  <h2 class="text-3xl sm:text-5xl text-balance font-bold">
-    Hola, soy Daniel Cordero 🙌
-  </h2>
+  {
+    lookingJob ? (
+      <div class="flex flex-col-reverse gap-4">
+        <h2 class="text-3xl sm:text-5xl text-balance font-bold">
+          Hola, soy Daniel Cordero 🙌
+        </h2>
+        <LookingJob />
+      </div>
+    ) : (
+      <h2 class="text-3xl sm:text-5xl text-balance font-bold">
+        Hola, soy Daniel Cordero 🙌
+      </h2>
+    )
+  }
   <p class="w-full max-w-[80ch] mt-6 mb-8 text-pretty text-base opacity-90">
     {basics.label} con 1 año de experiencia y stack centrado en JavaScript. Residiendo
     en {basics.location.city}, {basics.location.region}.
