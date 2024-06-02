@@ -25,7 +25,7 @@ const printInfo = [email, phone, linkedUrl].filter(Boolean).join(' • ');
   <div class="flex flex-col gap-2">
     <div class="flex flex-col-reverse gap-2">
       <h1 class="text-3xl font-bold text-balance mb-2">{name}, {label}.</h1>
-      <p class="flex gap-1 items-center text-sm">
+      <p class="flex flex-wrap gap-1 items-center text-sm">
         <WorldIcon class="size-[14px] text-zinc-600" />
         <span class="pr-2">
           {city}, {region}
