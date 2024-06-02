@@ -5,7 +5,7 @@ interface Props {
   name: string;
   position: string;
   date: string;
-  summary: string;
+  summary: string[];
 }
 
 const { name, position, date, summary } = Astro.props;
@@ -25,7 +25,7 @@ const { name, position, date, summary } = Astro.props;
       </div>
     </div>
   </summary>
-  <p class="mt-3">
-    {summary}
-  </p>
+  <ul class="mt-3 list-disc pl-4">
+    {summary.map((item: string) => <li class="text-sm mb-2">{item}</li>)}
+  </ul>
 </details>

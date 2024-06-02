@@ -2,13 +2,13 @@
 import Layout from '../layouts/Layout.astro'
 import Hero from '../components/sections/Hero.astro'
 import { Projects } from '../components/sections/Projects'
-// import { Blog } from '../components/sections/Blog'
+import Experience from '@components/sections/Experience.astro'
 ---
 
 <Layout title="Daniel Cordero - Desarrollador Web">
 	<main>
 		<Hero />
+		<Experience />
 		<Projects client:visible />
-		<!-- <Blog client:visible /> -->
 	</main>
 </Layout>
