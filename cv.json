@@ -41,6 +41,7 @@
       "position": "Desarrollador Aplicaciones TI",
       "startDate": "2024-04",
       "endDate": "2024-05",
+      "type": "Práctica Profesional",
       "summary": [
         "Apoyo en desarrollos del equipo utilizando tecnologías como SQL, React, jQuery y Azure Dev Ops.",
         "Colaboración efectiva en equipo, con habilidades en la estimación y cumplimiento de plazos y objetivos.",
@@ -53,6 +54,7 @@
       "position": "Analista de Sistemas",
       "startDate": "2023-03",
       "endDate": "2023-05",
+      "type": "Jornada Parcial",
       "summary": [
         "Desarrollo de nueva web empresarial con Wordpress y Woocommerce.",
         "Toma de requerimientos y automatización de plantillas Excel para los agentes de ventas.",
