@@ -39,19 +39,37 @@
   },
   "work": [
     {
+      "name": "Puerto Angamos",
+      "position": "Desarrollador Aplicaciones TI",
+      "startDate": "2024-04",
+      "endDate": "2024-05",
+      "summary": [
+        "Realización de consultas SQL para la obtención de datos relacionados a Puerto.",
+        "Apoyo en desarrollos del equipo utilizando tecnologías como React y jQuery.",
+        "Colaboración efectiva en equipo, con habilidades en la estimación y cumplimiento de plazos y objetivos.",
+        "Desarrollo de scripts en Python utilizando Pandas para la manipulación y análisis de grandes volúmenes de datos en Excel."
+      ]
+    },
+    {
       "name": "Diprofire Chile Ltda.",
       "position": "Analista de Sistemas",
       "startDate": "2023-03",
       "endDate": "2023-05",
-      "summary": "Acelerar procesos informáticos en la empresa. Creación de soluciones y plantillas para los agentes de ventas. Implementación de nuevo software en la empresa. Apoyo en tareas de distintas áreas: contabilidad, bodega y recursos humanos."
+      "summary": [
+        "Acelerar procesos informáticos en la empresa.", 
+        "Creación de soluciones y plantillas para los agentes de ventas.",
+        "Implementación de nuevo software en la empresa. Apoyo en tareas de distintas áreas: contabilidad, bodega y recursos humanos."
+      ]
     }
   ],
-  "education": [{
-    "institution": "Universidad Tecnológica de Chile - Inacap",
-    "area": "Egresado - Analista Programador",
-    "startDate": "01-03-2022",
-    "endDate": "01-12-2023"
-  }],
+  "education": [
+    {
+      "institution": "Universidad Tecnológica de Chile - Inacap",
+      "area": "Egresado - Analista Programador",
+      "startDate": "01-03-2022",
+      "endDate": "01-12-2023"
+    }
+  ],
   "certificates": [
     {
       "name": "Git y GitHub",
