@@ -1,0 +1,22 @@
+---
+import Layout from '@layouts/Layout.astro'
+import jokeJakeElPerro from '@assets/joke-jake-el-perro.mp4';
+---
+
+<Layout title="404 - Página no encontrada">
+  <main class="min-h-[50dvh] pt-5 sm:pt-10">
+    <h2 class="text-3xl sm:text-5xl font-bold my-10">Error 404 - Página no encontrada</h2>
+    <p>
+      ¡Ups! Parece que la página que buscas no existe. 😅
+    </p>
+    <p class="mb-5">
+      Pero ¡hey! haz encontrado a Jake el perro, así que no todo está perdido. 🐶
+    </p>
+    <a href="/" class="border px-6 py-1 rounded-sm bg-white text-zinc-800 hover:bg-zinc-800 hover:text-white duration-200">Volver al Inicio</a>
+    <div class="max-w-[500px] max-h-[300px] mt-10 overflow-hidden">
+      <video controls loop class="aspect-video rounded-sm">
+        <source src={jokeJakeElPerro} type="video/mp4">
+      </video>
+    </div>
+  </main>
+</Layout>
