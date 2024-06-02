@@ -8,8 +8,6 @@
     "summary": "1 año de experiencia en proyectos. Desarrollando con un stack centrado en JavaScript. Respaldado por certificaciones en desarrollo web. Mi objetivo es obtener más experiencia como desarrollador y realizar mi práctica profesional.",
     "disponibility": "Inmediata",
     "location": {
-      "address": "",
-      "postalCode": "",
       "city": "Antofagasta",
       "countryCode": "CL",
       "region": "Chile"
@@ -44,9 +42,9 @@
       "startDate": "2024-04",
       "endDate": "2024-05",
       "summary": [
-        "Realización de consultas SQL para la obtención de datos relacionados a Puerto.",
-        "Apoyo en desarrollos del equipo utilizando tecnologías como React y jQuery.",
+        "Apoyo en desarrollos del equipo utilizando tecnologías como SQL, React, jQuery y Azure Dev Ops.",
         "Colaboración efectiva en equipo, con habilidades en la estimación y cumplimiento de plazos y objetivos.",
+        "Comprensión de los procesos portuarios y del negocio empresarial.",
         "Desarrollo de scripts en Python utilizando Pandas para la manipulación y análisis de grandes volúmenes de datos en Excel."
       ]
     },
@@ -56,9 +54,9 @@
       "startDate": "2023-03",
       "endDate": "2023-05",
       "summary": [
-        "Acelerar procesos informáticos en la empresa.", 
-        "Creación de soluciones y plantillas para los agentes de ventas.",
-        "Implementación de nuevo software en la empresa. Apoyo en tareas de distintas áreas: contabilidad, bodega y recursos humanos."
+        "Desarrollo de nueva web empresarial con Wordpress y Woocommerce.",
+        "Toma de requerimientos y automatización de plantillas Excel para los agentes de ventas.",
+        "Acelerar procesos informáticos en la empresa mediante software."
       ]
     }
   ],
