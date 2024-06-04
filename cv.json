@@ -5,7 +5,7 @@
     "email": "daniel@corderodev.com",
     "phone": "+56 983032629",
     "url": "https://corderodev.com",
-    "summary": "1 año de experiencia en proyectos. Desarrollando con un stack centrado en JavaScript. Respaldado por certificaciones en desarrollo web. Mi objetivo es obtener más experiencia como desarrollador y realizar mi práctica profesional.",
+    "summary": "1 año de experiencia en proyectos, trabajando con un stack centrado en JavaScript y respaldado por certificaciones en desarrollo web. Mi objetivo es seguir adquiriendo experiencia como desarrollador y contribuir al desarrollo de soluciones mediante el software.",
     "disponibility": "Inmediata",
     "location": {
       "city": "Antofagasta",
@@ -65,7 +65,7 @@
   "education": [
     {
       "institution": "Universidad Tecnológica de Chile - Inacap",
-      "area": "Egresado - Analista Programador",
+      "area": "Analista Programador",
       "startDate": "01-03-2022",
       "endDate": "01-12-2023"
     }
@@ -105,9 +105,6 @@
     },
     {
       "name": "Javascript"
-    },
-    {
-      "name": "Typescript"
     },
     {
       "name": "Angular"
