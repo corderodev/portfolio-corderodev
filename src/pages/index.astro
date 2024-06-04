@@ -3,12 +3,18 @@ import Layout from '../layouts/Layout.astro'
 import Hero from '../components/sections/Hero.astro'
 import { Projects } from '../components/sections/Projects'
 import Experience from '@components/sections/Experience.astro'
+import Skills from '@components/sections/Skills.astro'
+import About from '@components/sections/About.astro'
+import Certificates from '@components/sections/Certificates.astro'
 ---
 
 <Layout title="Daniel Cordero - Desarrollador Web">
 	<main>
-		<Hero lookingJob={true} />
+		<Hero />
 		<Experience />
 		<Projects client:visible />
+		<Skills />
+		<About />
+		<Certificates />
 	</main>
 </Layout>
