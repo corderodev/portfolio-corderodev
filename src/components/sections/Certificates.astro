@@ -1,21 +1,27 @@
 ---
-import { certificates } from '@cv';
+import { certificates } from '@cv'
+import { CertificateIcon } from '@icons/Certificate.tsx'
 ---
 
 <section class="my-20">
-  <h2 class="text-2xl font-semibold lg:text-3xl">Certificados</h2>
-  <div class="mt-10 grid grid-cols-1 min-[600px]:grid-cols-2 gap-y-10">
+  <h2 class="text-2xl font-semibold lg:text-3xl text-center mb-20">
+    Certificados
+  </h2>
+  <div
+    class="w-fit mx-auto mt-10 grid grid-cols-1 min-[400px]:grid-cols-2 gap-y-10"
+  >
     {
       certificates.map(({ name, url, issuer, date }) => {
         const year = new Date(date).getFullYear()
         return (
           <a href={url} class="group w-fit" target="_blank">
-            <h3 class="text-lg group-hover:underline decoration-yellow-200 underline-offset-4">
+            <h3 class="text-lg group-hover:underline decoration-blue-600 dark:decoration-blue-300 underline-offset-4">
               {name}
             </h3>
-            <p class="text-sm">
+            <p class="text-sm opacity-80">
               {issuer} - <time>{year}</time>
             </p>
+            <CertificateIcon class="size-2 ml-2 group-hover:decoration-blue-600 dark:decoration-blue-300" />
           </a>
         )
       })

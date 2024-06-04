@@ -2,7 +2,6 @@
 import { Html } from '@icons/skills/Html.tsx'
 import { Css } from '@icons/skills/Css.tsx'
 import { Javascript } from '@icons/skills/Javascript.tsx'
-import { Typescript } from '@icons/skills/TypeScriptIcon'
 import { React } from '@icons/skills/React.tsx'
 import { Node } from '@icons/skills/Node.tsx'
 import { Git } from '@icons/skills/Git.tsx'
@@ -18,7 +17,6 @@ const SKILLS_ICONS: Record<string, any> = {
   Html,
   Css,
   Javascript,
-  Typescript,
   Angular,
   React,
   Next,
@@ -31,9 +29,9 @@ const SKILLS_ICONS: Record<string, any> = {
 };
 ---
 
-<section class="my-10">
-  <h2 class="text-2xl font-semibold lg:text-3xl">Conocimientos</h2>
-  <ul class="mt-10 flex flex-wrap gap-4">
+<section class="mb-20">
+  <h2 class="text-2xl font-semibold lg:text-3xl text-center mb-20">Conocimientos</h2>
+  <ul class="w-fit flex flex-wrap gap-4">
     {
       skills.map(({ name }) => {
         const iconName =
@@ -43,8 +41,8 @@ const SKILLS_ICONS: Record<string, any> = {
           name === 'Tailwind Css' ? 'Tailwind' : name
         const Icon = SKILLS_ICONS[iconName]
         return (
-          <li class="flex items-center space-x-2 rounded-md border border-zinc-800 px-4 py-1 text-zinc-200">
-            {Icon && <Icon class="size-4 fill-zinc-300" />}
+          <li class="flex items-center space-x-2 rounded-md border border-zinc-800/30 dark:border-zinc-800 px-4 py-1">
+            {Icon && <Icon class="size-4 fill-zinc-700 dark:fill-zinc-300" />}
             <span class="uppercase mt-0.5">{name}</span>
           </li>
         )

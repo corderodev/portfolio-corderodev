@@ -3,11 +3,11 @@ import CardExperience from '@components/CardExperience.astro'
 import { work } from '@cv';
 ---
 
-<section class="mb-20">
-  <h2 class="text-2xl font-semibold lg:text-3xl">Experiencia</h2>
-  <ul class="mt-10">
+<section id="experience" class="mb-20">
+  <h2 class="text-2xl font-semibold lg:text-3xl text-center mb-20">Experiencia</h2>
+  <ul class="mx-auto">
     {
-      work.map(({ name, position, startDate, endDate, summary }) => {
+      work.map(({ name, position, startDate, endDate, type, summary }) => {
         const startYear = new Date(startDate).toLocaleString('es-ES', {
           month: 'short',
           year: 'numeric',
@@ -27,6 +27,7 @@ import { work } from '@cv';
               name={name}
               position={position}
               date={years}
+              type={type}
               summary={summary}
             />
           </li>

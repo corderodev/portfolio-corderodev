@@ -1,46 +1,37 @@
 ---
 import MailCopy from '@components/MailCopy.astro'
-import { ResumeIcon } from '@icons/Resume.jsx'
 import { basics } from '@cv'
-import LookingJob from '@components/LookingJob.astro'
-
-interface Props {
-  lookingJob: boolean
-}
-
-const { lookingJob } = Astro.props
+import profile from '@assets/profile.webp'
+import { Image } from 'astro:assets'
+import { DownArrowIcon } from '@icons/DownArrow';
 ---
 
 <section
-  class="min-h-[50dvh] w-full mx-auto flex flex-col place-content-center py-20"
+  id="hero"
+  class="min-h-[50dvh] w-full mx-auto flex flex-col pt-24 pb-20 text-center"
 >
-  {
-    lookingJob ? (
-      <div class="flex flex-col-reverse gap-4">
-        <h2 class="text-3xl sm:text-5xl text-balance font-bold">
-          Hola, soy Daniel Cordero 🙌
-        </h2>
-        <LookingJob />
-      </div>
-    ) : (
-      <h2 class="text-3xl sm:text-5xl text-balance font-bold">
-        Hola, soy Daniel Cordero 🙌
-      </h2>
-    )
-  }
-  <p class="w-full max-w-[80ch] mt-6 mb-8 text-pretty text-base opacity-90">
-    {basics.label} con 1 año de experiencia y stack centrado en JavaScript. Residiendo
-    en {basics.location.city}, {basics.location.region}.
+  <div class="flex flex-col-reverse gap-8 mb-5">
+    <h1 class="text-4xl font-bold">Desarrollador Web Frontend</h1>
+    <Image
+      src={profile}
+      alt="Desarrollador Web Frontend"
+      class="max-w-[120px] w-full mx-auto rounded-full"
+    />
+  </div>
+  <p
+    class="font-medium [&>span]:font-bold text-base text-pretty max-w-[40ch] mx-auto opacity-90"
+  >
+    Desarrollo <span>soluciones a problemáticas</span> mediante software, con un
+    stack centrado en <span>JavaScript</span>. Resido en <span>Antofagasta, Chile.</span>
   </p>
-  <div class="flex flex-wrap gap-4">
-    <MailCopy email="daniel@corderodev.com" name="Daniel Cordero" />
+  <div class="mt-5 flex flex-wrap justify-center items-center gap-4">
     <a
       href="/resume"
-      target="_blank"
-      class="rounded-md border border-zinc-400/20 flex gap-1 items-center w-fit px-4 py-0.5 hover:bg-zinc-800"
+      class="px-6 py-1 text-center font-medium rounded-full text-black dark:text-black bg-blue-200 dark:bg-blue-400 hover:bg-blue-300 duration-200 ease-in-out"
     >
-      <ResumeIcon className="size-5 mb-0.5" />
       Ver Currículum
     </a>
+    <MailCopy email={basics.email} name={basics.name} />
   </div>
+  <DownArrowIcon class="size-12 mx-auto mt-20 animate-down-arrow" />
 </section>

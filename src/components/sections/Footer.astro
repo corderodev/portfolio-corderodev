@@ -16,20 +16,21 @@ const SOCIAL_ICONS: Record<string, any> = {
 };
 ---
 
-<footer class="bg-zinc-900 text-zinc-100">
+<footer>
   <div class="py-16">
     <CardCallToAction />
 
     <div class="mt-16">
-      <ul class="flex flex-wrap justify-center gap-5 text-zinc-200/80 [&>li:hover]:text-yellow-300 [&>li]:duration-200">
+      <ul class="flex flex-wrap justify-center gap-5 [&>li:hover]:text-blue-600 dark:[&>li:hover]:text-blue-300 [&>li]:duration-200">
         <li><a href="/resume" target="_blank">CV</a></li>
+        <li><a href="/#experience">Experiencia</a></li>
         <li><a href="/#portfolio">Portafolio</a></li>
-        <li><a href="/about">Sobre mí</a></li>
+        <li><a href="/#about">Sobre mí</a></li>
       </ul>
     </div>
 
     <div class="mt-16 flex flex-wrap justify-between gap-8">
-      <ul class="flex mx-auto gap-6 text-zinc-200/80">
+      <ul class="flex mx-auto gap-6">
         {
           basics.profiles.map(({ network, url, username }) => {
             const Icon = SOCIAL_ICONS[network]
@@ -47,7 +48,7 @@ const SOCIAL_ICONS: Record<string, any> = {
       <div class="w-full mt-2 flex flex-wrap gap-6 items-center justify-center sm:justify-between">
         <a
           href="/"
-          class="flex items-center gap-2 text-zinc-200/80 hover:text-yellow-300 duration-200"
+          class="flex items-center gap-2 hover:text-blue-600 dark:hover:text-blue-300 duration-200"
         >
           <LogoIcon className="size-6" />
           <p>corderodev</p>

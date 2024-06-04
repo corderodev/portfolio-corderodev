@@ -17,10 +17,10 @@ export const Projects = () => {
   }
 
   return (
-    <section id="portfolio" class='min-h-[55dvh]'>
-      <div>
-        <h2 class='text-2xl font-semibold lg:text-3xl'>Portafolio</h2>
-        <div class='flex py-4 mt-4 overflow-x-auto overflow-y-hidden border-gray-700'>
+    <section id="portfolio" class='mb-10 min-h-[500px]'>
+      <div class="flex flex-col">
+        <h2 class='text-2xl font-semibold lg:text-3xl text-center'>Portafolio</h2>
+        <div class='flex mx-auto py-5 overflow-x-auto overflow-y-hidden border-black/20 dark:border-white/20'>
           <ButtonGallery
             onClick={() => handleType('all')}
             active={tag === 'all'}
