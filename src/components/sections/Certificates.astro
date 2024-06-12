@@ -1,6 +1,9 @@
 ---
 import { certificates } from '@cv'
 import { CertificateIcon } from '@icons/Certificate.tsx'
+
+const orderCertificates = (a, b) => new Date(b.date) - new Date(a.date)
+certificates.sort(orderCertificates)
 ---
 
 <section class="my-20">
@@ -8,7 +11,7 @@ import { CertificateIcon } from '@icons/Certificate.tsx'
     Certificados
   </h2>
   <div
-    class="w-fit mx-auto mt-10 grid grid-cols-1 min-[400px]:grid-cols-2 gap-y-10"
+    class="w-fit mx-auto mt-10 grid grid-cols-1 min-[400px]:grid-cols-2 gap-y-10 gap-x-14"
   >
     {
       certificates.map(({ name, url, issuer, date }) => {
