@@ -1,16 +1,55 @@
 ---
-import { LogoIcon } from '@icons/Logo.tsx'
+import { LogoIcon } from '@icons/Logo.tsx';
 ---
+
 <header class="z-50 fixed left-0 bottom-0 sm:top-0 w-full h-fit">
-  <nav class="mx-auto w-fit py-3.5 sm:py-3 px-4 rounded-t-lg sm:rounded-t-none sm:rounded-b-lg flex flex-wrap gap-10 bg-gray-50 dark:bg-zinc-800 shadow-sm justify-center">
-    <a href="/#hero" class="hover:text-blue-500 dark:hover:text-blue-300 duration-200 hidden sm:flex gap-2">
+  <nav
+    class="mx-auto w-fit py-3.5 sm:py-3 px-4 rounded-t-lg sm:rounded-t-none sm:rounded-b-lg flex flex-wrap gap-10 shadow-sm justify-center max-sm:bg-zinc-800 max-sm:border max-sm:border-b-0 max-sm:border-zinc-700/80 hover:border-blue-300"
+  >
+    <a
+      href="/#hero"
+      class="hover:text-blue-500 dark:hover:text-blue-300 duration-200 hidden sm:flex gap-2"
+    >
       <LogoIcon className="size-6" />
       <h1>corderodev</h1>
     </a>
-    <ul class="flex gap-5 [&>li:hover]:text-blue-500 dark:[&>li:hover]:text-blue-300 font-medium [&>li]:duration-200 ease-in-out">
+    <ul
+      class="flex gap-5 [&>li:hover]:text-blue-500 dark:[&>li:hover]:text-blue-300 font-medium [&>li]:duration-200 ease-in-out"
+    >
       <li><a href="/resume" target="_blank">CV</a></li>
       <li><a href="/#experience">Experiencia</a></li>
       <li><a href="/#portfolio">Portafolio</a></li>
     </ul>
   </nav>
 </header>
+
+<style scoped>
+  @media screen and (min-width: 640px) {
+    :root {
+      --nav-bg: rgba(255, 255, 255, 0.9);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --nav-bg: rgba(39, 39, 42, 0.9);
+      }
+    }
+    .navbar-scrolled {
+      background-color: var(--nav-bg);
+      transition: background-color 0.3s;
+      backdrop-filter: blur(4px);
+      border: 1px solid rgba(63, 63, 70, 0.8);
+      border-top: none;
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener("scroll", function () {
+    const navbar = document.querySelector("nav");
+    if (window.scrollY > 50) {
+      navbar.classList.add("navbar-scrolled");
+    } else {
+      navbar.classList.remove("navbar-scrolled");
+    }
+  });
+</script>
