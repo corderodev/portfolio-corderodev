@@ -2,6 +2,7 @@
 import { Html } from '@icons/skills/Html.tsx'
 import { Css } from '@icons/skills/Css.tsx'
 import { Javascript } from '@icons/skills/Javascript.tsx'
+import { Typescript } from '@icons/skills/Typescript.tsx'
 import { React } from '@icons/skills/React.tsx'
 import { Node } from '@icons/skills/Node.tsx'
 import { Git } from '@icons/skills/Git.tsx'
@@ -9,44 +10,53 @@ import { Github } from '@icons/skills/Github.tsx'
 import { Tailwind } from '@icons/skills/Tailwind.tsx'
 import { Next } from '@icons/skills/Next.tsx'
 import { AstroIcon } from '@icons/skills/Astro.tsx'
-import { Angular } from '@icons/skills/Angular.tsx'
+import { Express } from '@icons/skills/Express.tsx'
 import { Postgresql } from '@icons/skills/Postgresql.tsx'
+import { Playwright } from '@icons/skills/Playwright.tsx'
+import { Sqlite } from '@icons/skills/Sqlite'
 import { skills } from '@cv'
 
 const SKILLS_ICONS: Record<string, any> = {
   Html,
   Css,
   Javascript,
-  Angular,
+  Typescript,
   React,
   Next,
   AstroIcon,
   Tailwind,
   Node,
+  Express,
   Postgresql,
+  Sqlite,
   Git,
   Github,
+  Playwright
 };
 ---
 
-<section class="mb-20">
-  <h2 class="text-2xl font-semibold lg:text-3xl text-center mb-20">Conocimientos</h2>
+<div class="py-20 px-4 max-w-[60ch] mx-auto">
+  <h3 class="text-2xl font-bold max-w-[60ch] mx-auto pb-12 text-center lg:text-start">
+    Conocimientos
+  </h3>
   <ul class="w-fit flex flex-wrap gap-4">
     {
       skills.map(({ name }) => {
         const iconName =
           name === 'Next.js' ? 'Next' : 
+          name === 'React Native' ? 'React' : 
           name === 'Astro' ? 'AstroIcon' : 
           name === 'Node.js' ? 'Node' : 
-          name === 'Tailwind Css' ? 'Tailwind' : name
+          name === 'Tailwind Css' ? 'Tailwind' :
+          name === 'SQLite' ? 'Sqlite' : name
         const Icon = SKILLS_ICONS[iconName]
         return (
-          <li class="flex items-center space-x-2 rounded-md border border-zinc-800/30 dark:border-zinc-800 px-4 py-1">
-            {Icon && <Icon class="size-4 fill-zinc-700 dark:fill-zinc-300" />}
-            <span class="uppercase mt-0.5">{name}</span>
+          <li class={'flex items-center space-x-2 rounded-md px-4 py-1 bg-gray-200 dark:bg-zinc-800'}>
+            {Icon && <Icon class="size-5 fill-zinc-700 dark:fill-zinc-300" />}
+            <span class="text-lg uppercase mt-0.5">{name}</span>
           </li>
         )
       })
     }
   </ul>
-</section>
+</div>
