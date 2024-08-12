@@ -2,24 +2,29 @@
 import { LogoIcon } from '@icons/Logo.tsx';
 ---
 
-<header class="z-50 fixed left-0 bottom-0 sm:top-0 w-full h-fit">
+<header
+  class="z-50 fixed left-0 bottom-4 sm:top-4 w-full h-fit px-4 min-sm:px-10"
+>
   <nav
-    class="mx-auto w-fit py-3.5 sm:py-3 px-4 rounded-t-lg sm:rounded-t-none sm:rounded-b-lg flex flex-wrap gap-10 shadow-sm justify-center max-sm:bg-zinc-800 max-sm:border max-sm:border-b-0 max-sm:border-zinc-700/80 hover:border-blue-300"
+    class="max-[374px]:w-full min-[375px]:w-fit mx-auto py-3.5 sm:py-3 px-4 rounded-lg flex justify-between gap-10 border border-transparent max-sm:border-gray-300 max-sm:dark:border-zinc-700 max-sm:bg-[rgba(229,231,235,0.9)] max-sm:dark:bg-[rgba(39,39,42,0.9)] max-sm:backdrop-blur-sm max-sm:overflow-x-auto"
   >
-    <a
-      href="/#hero"
-      class="hover:text-blue-500 dark:hover:text-blue-300 duration-200 hidden sm:flex gap-2"
-    >
-      <LogoIcon className="size-6" />
-      <h1>corderodev</h1>
-    </a>
-    <ul
-      class="flex gap-5 [&>li:hover]:text-blue-500 dark:[&>li:hover]:text-blue-300 font-medium [&>li]:duration-200 ease-in-out"
-    >
-      <li><a href="/resume" target="_blank">CV</a></li>
-      <li><a href="/#experience">Experiencia</a></li>
-      <li><a href="/#portfolio">Portafolio</a></li>
-    </ul>
+    <div class="flex gap-10 items-center">
+      <a
+        href="/#hero"
+        class="hover:text-blue-500 dark:hover:text-blue-300 duration-200 hidden sm:flex gap-2"
+      >
+        <LogoIcon className="size-6" />
+        <h1>corderodev</h1>
+      </a>
+      <ul
+        class="flex gap-5 [&>li:hover]:text-blue-500 dark:[&>li:hover]:text-blue-300 font-medium [&>li]:duration-200 ease-in-out [&>li>a]:block [&>li>a]:text-nowrap"
+      >
+        <li><a href="/resume" target="_blank">CV</a></li>
+        <li><a href="/#experience">Experiencia</a></li>
+        <li><a href="/#portfolio">Portafolio</a></li>
+        <li><a href="/#about">Sobre mí</a></li>
+      </ul>
+    </div>
   </nav>
 </header>
 
@@ -27,18 +32,23 @@ import { LogoIcon } from '@icons/Logo.tsx';
   @media screen and (min-width: 640px) {
     :root {
       --nav-bg: rgba(255, 255, 255, 0.9);
+      --border: rgba(39, 39, 42, 0.3);
     }
     @media (prefers-color-scheme: dark) {
       :root {
         --nav-bg: rgba(39, 39, 42, 0.9);
+        --border: rgba(161, 161, 170, 0.2);
       }
     }
     .navbar-scrolled {
       background-color: var(--nav-bg);
       transition: background-color 0.3s;
       backdrop-filter: blur(4px);
-      border: 1px solid rgba(63, 63, 70, 0.8);
-      border-top: none;
+      border: 1px solid var(--border);
+      --tw-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+      --tw-shadow-colored: 0 1px 2px 0 var(--tw-shadow-color);
+      box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+        var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
     }
   }
 </style>
@@ -47,9 +57,9 @@ import { LogoIcon } from '@icons/Logo.tsx';
   document.addEventListener("scroll", function () {
     const navbar = document.querySelector("nav");
     if (window.scrollY > 50) {
-      navbar.classList.add("navbar-scrolled");
+      navbar?.classList.add("navbar-scrolled");
     } else {
-      navbar.classList.remove("navbar-scrolled");
+      navbar?.classList.remove("navbar-scrolled");
     }
   });
 </script>
