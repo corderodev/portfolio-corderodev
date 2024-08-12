@@ -4,15 +4,21 @@ import { basics } from '@cv'
 ---
 
 <div
-      class="flex flex-col items-center gap-4 rounded-lg bg-blue-200 text-zinc-900 p-6 sm:flex-row sm:justify-between shadow-sm"
-    >
-      <strong class="text-xl text-balance text-center sm:text-start">Si necesitas contactarme ¡Envíame un Mail!</strong>
+  class="relative overflow-hidden w-full max-w-4xl mx-auto flex flex-col items-center gap-4 rounded-lg bg-gray-200 dark:bg-zinc-900 p-6 sm:flex-row sm:justify-between shadow-md">
 
-      <a
-        href={`mailto:${basics.email}`}
-        class="inline-flex items-center gap-2 rounded-full border border-zinc-800 bg-zinc-800 px-8 py-3 text-blue-300 hover:bg-transparent hover:text-zinc-900 focus:outline-none focus:ring active:bg-white/90 duration-200"
-      >
-        <span class="text-sm font-medium">Enviar mail</span>
-        <RightArrowIcon className="size-5" />
-      </a>
-    </div>
+  <div class="absolute bottom-0 left-[-20%] right-0 top-[-10%] h-[500px] w-[500px] rounded-full bg-[radial-gradient(circle_farthest-side,rgba(147,197,253,.15),rgba(255,255,255,0))]"></div>
+  <div class="absolute bottom-0 right-[-20%] top-[-10%] h-[500px] w-[500px] rounded-full bg-[radial-gradient(circle_farthest-side,rgba(59,130,246,.15),rgba(255,255,255,0))]"></div>
+
+  <div class="flex flex-col gap-2">
+    <strong class="z-10 text-xl sm:text-2xl text-balance text-center sm:text-start">Si necesitas contactarme <span class="text-blue-500">¡Envíame un mail!</span></strong>
+    <p class="z-10 text-lg text-balance text-center sm:text-start text-gray-400">Responderé tus dudas lo más pronto que pueda.</p>
+  </div>
+
+  <a
+    href={`mailto:${basics.email}`}
+    class="z-10 px-8 py-3 inline-flex items-center gap-2 rounded-full bg-zinc-700 text-blue-400 hover:bg-transparent focus:outline-none focus:ring active:bg-white/90 duration-200 group"
+  >
+    <span class="text-sm font-medium">Enviar mail</span>
+    <RightArrowIcon className="size-5 group-hover:translate-x-1 duration-200" />
+  </a>
+</div>
