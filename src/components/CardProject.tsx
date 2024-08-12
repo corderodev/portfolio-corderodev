@@ -5,7 +5,7 @@ interface Props {
   name: string
   description: string
   url: string
-  repo: string
+  repo?: string
   tags: string[]
   active: boolean
   className?: string
@@ -22,7 +22,7 @@ export const CardProject = ({
 }: Props) => {
   return (
     <article
-      class={`w-full border-b pb-4 border-black/20 dark:border-zinc-800 ${className}`}
+      class={`w-full max-w-sm border-b pb-4 border-black/20 dark:border-zinc-800 ${className}`}
     >
       <header class='flex gap-4 items-center'>
         <h3 class='w-fit text-lg font-semibold capitalize text-balance hover:underline decoration-blue-600 dark:decoration-blue-300 underline-offset-4 flex items-center gap-1'>
@@ -33,17 +33,19 @@ export const CardProject = ({
             {name}
           </a>
         </h3>
-        <a
-          href={repo}
-          class='hover:text-blue-600 dark:hover:text-blue-400 duration-200'
-          target='_blank'
-        >
-          <GitHub className='size-4' />
-        </a>
+        {repo && (
+          <a
+            href={repo}
+            class='hover:text-blue-600 dark:hover:text-blue-400 duration-200'
+            target='_blank'
+          >
+            <GitHub className='size-4' />
+          </a>
+        )}
       </header>
       <p class='py-2 text-sm truncate opacity-90'>{description}</p>
       <footer>
-        <p class='mt-2 text-xs tracking-wider uppercase text-blue-600 dark:text-blue-300 '>
+        <p class='mt-2 text-xs tracking-wider uppercase text-blue-600 dark:text-blue-300 truncate'>
           {tags.map((tag, index) => {
             return (
               <span key={index} class='mr-3'>
