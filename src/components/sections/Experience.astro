@@ -1,38 +1,17 @@
 ---
 import CardExperience from '@components/CardExperience.astro'
-import { work } from '@cv';
+import { work } from '@cv'
 ---
 
-<section id="experience" class="mb-20">
-  <h2 class="text-2xl font-semibold lg:text-3xl text-center mb-20">Experiencia</h2>
-  <ul class="mx-auto">
+<section id="experience" class="max-w-7xl min-h-screen px-4 py-20 mx-auto">
+  <h1 class="text-3xl sm:text-4xl pb-12 font-semibold text-center">
+    Experiencia reciente
+  </h1>
+  <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
     {
-      work.map(({ name, position, startDate, endDate, type, summary }) => {
-        const startYear = new Date(startDate).toLocaleString('es-ES', {
-          month: 'short',
-          year: 'numeric',
-        })
-        const endYear =
-          endDate != null
-            ? new Date(endDate).toLocaleString('es-ES', {
-                month: 'short',
-                year: 'numeric',
-              })
-            : 'Actual'
-        const years = `${startYear} - ${endYear}`
-
-        return (
-          <li class="rounded-md my-10">
-            <CardExperience
-              name={name}
-              position={position}
-              date={years}
-              type={type}
-              summary={summary}
-            />
-          </li>
-        )
-      })
+      work.map((experience, index) => (
+        <CardExperience work={experience} position={index} />
+      ))
     }
-  </ul>
+  </div>
 </section>
