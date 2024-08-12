@@ -6,7 +6,7 @@
     "phone": "+56 983032629",
     "url": "https://corderodev.com",
     "summary": "1 año de experiencia en proyectos, trabajando con un stack centrado en JavaScript y respaldado por certificaciones en desarrollo web. Mi objetivo es seguir adquiriendo experiencia como desarrollador y contribuir al desarrollo de soluciones mediante el software.",
-    "disponibility": "Inmediata",
+    "disponibility": "Preaviso de 30 días",
     "location": {
       "city": "Antofagasta",
       "countryCode": "CL",
@@ -37,6 +37,19 @@
   },
   "work": [
     {
+      "name": "Diprofire Chile Ltda.",
+      "position": "Analista de Sistemas",
+      "startDate": "2024-07",
+      "endDate": null,
+      "type": "Jornada Completa",
+      "summary": [
+        "Desarrollo y puesta en producción de nueva web empresarial con Next.js, React, Vercel, Algolia y Wordpress Headless CMS.",
+        "Implementación de Playwright para automatización de pruebas y verificación de calidad.",
+        "Implementación de aplicaciones de escrito con Electron para la automatización de procesos internos."
+      ],
+      "link": "https://diprofire.cl"
+    },
+    {
       "name": "Puerto Angamos",
       "position": "Desarrollador Aplicaciones TI",
       "startDate": "2024-04",
@@ -47,7 +60,8 @@
         "Colaboración efectiva en equipo, con habilidades en la estimación y cumplimiento de plazos y objetivos.",
         "Comprensión de los procesos portuarios y del negocio empresarial.",
         "Desarrollo de scripts en Python utilizando Pandas para la manipulación y análisis de grandes volúmenes de datos en Excel."
-      ]
+      ],
+      "link": "https://puertoangamos.cl"
     },
     {
       "name": "Diprofire Chile Ltda.",
@@ -56,10 +70,11 @@
       "endDate": "2023-05",
       "type": "Jornada Parcial",
       "summary": [
-        "Desarrollo de nueva web empresarial con Wordpress y Woocommerce.",
+        "Mantenimiento de web empresarial con Wordpress y Woocommerce.",
         "Toma de requerimientos y automatización de plantillas Excel para los agentes de ventas.",
         "Acelerar procesos informáticos en la empresa mediante software."
-      ]
+      ],
+      "link": "https://diprofire.cl"
     }
   ],
   "education": [
@@ -137,7 +152,7 @@
       "name": "Javascript"
     },
     {
-      "name": "Angular"
+      "name": "Typescript"
     },
     {
       "name": "React"
@@ -146,7 +161,7 @@
       "name": "Next.js"
     },
     {
-      "name": "Astro"
+      "name": "React Native"
     },
     {
       "name": "Tailwind Css"
@@ -158,10 +173,16 @@
       "name": "Postgresql"
     },
     {
+      "name": "SQLite"
+    },
+    {
       "name": "Git"
     },
     {
       "name": "Github"
+    },
+    {
+      "name": "Playwright"
     }
   ],
   "languages": [
@@ -175,6 +196,20 @@
     }
   ],
   "projects": [
+    {
+      "name": "Diprofire Web",
+      "isActive": false,
+      "description": "Desarrollo y puesta en producción de nueva web empresarial con Next.js, React, Vercel, Algolia y Wordpress Headless CMS.",
+      "technologies": [
+        "next.js",
+        "react",
+        "tailwind",
+        "algolia",
+        "wordpress"
+      ],
+      "url": "https://diprofire.cl",
+      "github": "https://github.com/analista-soporteTI/diprofire"
+    },
     {
       "name": "AngularKit",
       "isActive": true,
@@ -206,7 +241,8 @@
       "description": "Página clon de la serie de Netflix, Cyberpunk Edgerunners.",
       "technologies": [
         "react",
-        "sass"
+        "sass",
+        "vite"
       ],
       "url": "https://corderodev.github.io/cyberpunk-edgerunners-project/",
       "github": "https://github.com/corderodev/cyberpunk-edgerunners-project"
