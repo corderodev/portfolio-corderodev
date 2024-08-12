@@ -1,18 +1,35 @@
-<section id="about" class="mb-20">
-  <h2 class="text-2xl font-semibold lg:text-3xl text-center mb-20">Sobre mí</h2>
-  <p class="pb-4">
-    ✌️ Soy Daniel Cordero. 🎓 Egresé como Analista Programador de la Universidad
-    Tecnológica de Chile, Inacap. 🚀 Comencé a programar en 2021 y desde
-    entonces me he enamorado de la programación.
-  </p>
-  <p class="pb-4">
-    🧠 Como hábito, dedico parte de mi tiempo a seguir aprendiendo de manera
-    autodidacta, lo que me ayuda a alcanzar 🎯 mi objetivo de mejorar como
-    programador al adquirir más experiencia y mantener el enfoque en lo que me
-    motiva: desarrollar soluciones a problemáticas.
-  </p>
-  <p>
-    🌱 Y como no todo es programar, en mis tiempos de ocio disfruto leer, ver
-    series, jugar voleibol o videojuegos.
-  </p>
+---
+import Skills from '@components/sections/Skills.astro';
+---
+
+<section
+  id="about"
+  class="[&>p]:leading-relaxed [&>p]:pb-8 max-w-7xl mx-auto px-4 py-20 grid grid-cols-1 lg:grid-cols-2 gap-10 items-baseline"
+>
+  <div class="w-full max-w-[60ch] space-y-4 mx-auto">
+    <h2
+      class="text-3xl sm:text-4xl font-bold max-w-[60ch] mx-auto pb-12 text-center lg:text-start"
+    >
+      Un poco sobre mí
+    </h2>
+    <p>
+      ✌️ Mi nombre es Daniel Cordero. 🎓 Egresé como Analista Programador de la
+      Universidad Tecnológica de Chile, Inacap. 🚀 Comencé a programar en 2021 y
+      desde entonces me he enamorado de la programación.
+    </p>
+    <p>
+      🧠 Como hábito, dedico parte de mi tiempo a seguir aprendiendo de manera
+      autodidacta, lo que me ayuda a alcanzar 🎯 mi objetivo de mejorar como
+      programador al adquirir más experiencia y mantener el enfoque en lo que me
+      motiva: desarrollar soluciones a problemáticas.
+    </p>
+    <p>
+      🤓 He trabajado en proyectos personales y colaborativos, lo que me ha
+      permitido adquirir experiencia real en el desarrollo de aplicaciones. 🌱 Y
+      como no todo es programar, en mis tiempos de ocio disfruto leer, ver
+      series, jugar voleibol o videojuegos.
+    </p>
+  </div>
+
+  <Skills />
 </section>
