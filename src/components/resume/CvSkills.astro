@@ -2,7 +2,7 @@
 import { Html } from '@icons/skills/Html.tsx'
 import { Css } from '@icons/skills/Css.tsx'
 import { Javascript } from '@icons/skills/Javascript.tsx'
-import { Typescript } from '@icons/skills/TypeScriptIcon'
+import { Typescript } from '@icons/skills/Typescript.tsx'
 import { React } from '@icons/skills/React.tsx'
 import { Node } from '@icons/skills/Node.tsx'
 import { Git } from '@icons/skills/Git.tsx'
@@ -10,30 +10,34 @@ import { Github } from '@icons/skills/Github.tsx'
 import { Tailwind } from '@icons/skills/Tailwind.tsx'
 import { Next } from '@icons/skills/Next.tsx'
 import { AstroIcon } from '@icons/skills/Astro.tsx'
-import { Angular } from '@icons/skills/Angular.tsx'
+import { Express } from '@icons/skills/Express.tsx'
 import { Postgresql } from '@icons/skills/Postgresql.tsx'
+import { Sqlite } from '@icons/skills/Sqlite'
+import { Playwright } from '@icons/skills/Playwright'
 
 const SKILLS_ICONS: Record<string, any> = {
-	Html,
-	Css,
-	Javascript,
-	Typescript,
-	Angular,
-	React,
-	Next,
-	AstroIcon,
-	Tailwind,
-	Node,
-	Postgresql,
-	Git,
-	Github,
+  Html,
+  Css,
+  Javascript,
+  Typescript,
+  React,
+  Next,
+  AstroIcon,
+  Tailwind,
+  Node,
+  Express,
+  Postgresql,
+  Sqlite,
+  Git,
+  Github,
+  Playwright
 }
 
 interface Props {
   skills: { name: string }[];
 }
 
-const { skills } = Astro.props
+const { skills } = Astro.props;
 ---
 
 <section id="CvSkills">
@@ -42,15 +46,12 @@ const { skills } = Astro.props
     {
       skills.map(({ name }) => {
         const iconName =
-          name === 'Next.js'
-            ? 'Next'
-            : name === 'Astro'
-              ? 'AstroIcon'
-              : name === 'Node.js'
-                ? 'Node'
-                : name === 'Tailwind Css'
-                  ? 'Tailwind'
-                  : name
+          name === 'Next.js' ? 'Next' : 
+          name === 'React Native' ? 'React' : 
+          name === 'Astro' ? 'AstroIcon' : 
+          name === 'Node.js' ? 'Node' : 
+          name === 'Tailwind Css' ? 'Tailwind' :
+          name === 'SQLite' ? 'Sqlite' : name
         const Icon = SKILLS_ICONS[iconName]
         return (
           <li class="flex items-center space-x-2 text-zinc-900">
