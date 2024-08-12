@@ -4,9 +4,10 @@ interface Props {
     name: string;
     position: string;
     startDate: string;
-    endDate: string;
+    endDate: string | null;
     type: string;
     summary: string[];
+    link?: string;
   }[];
 }
 
