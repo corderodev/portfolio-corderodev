@@ -1,38 +1,99 @@
 ---
-import MailCopy from '@components/MailCopy.astro'
 import { basics } from '@cv'
-import profile from '@assets/profile.webp'
-import { Image } from 'astro:assets'
-import { DownArrowIcon } from '@icons/DownArrow';
+import MailCopy from '@components/MailCopy.astro'
+import ButtonResume from '@components/ButtonResume.astro'
+import LookingJob from '@components/LookingJob.astro';
 ---
 
 <section
   id="hero"
-  class="min-h-[50dvh] w-full mx-auto flex flex-col pt-24 pb-20 text-center"
+  class="min-h-[85vh] px-6 grid place-content-center text-center overflow-hidden h-screen"
 >
-  <div class="flex flex-col-reverse gap-8 mb-5">
-    <h1 class="text-4xl font-bold">Desarrollador Web Frontend</h1>
-    <Image
-      src={profile}
-      alt="Desarrollador Web Frontend"
-      class="max-w-[120px] w-full mx-auto rounded-full"
-    />
-  </div>
-  <p
-    class="font-medium [&>span]:font-bold text-base text-pretty max-w-[40ch] mx-auto opacity-90"
-  >
-    Desarrollo <span>soluciones a problemáticas</span> mediante software, con un
-    stack centrado en <span>JavaScript</span>. Resido en <span>Antofagasta, Chile.</span>
-  </p>
-  <div class="mt-5 flex flex-wrap justify-center items-center gap-4">
-    <a
-      target="_blank"
-      href="/resume"
-      class="px-6 py-[6px] text-center font-medium rounded-full text-black dark:text-black bg-blue-200 dark:bg-blue-400 hover:bg-blue-300 duration-200 ease-in-out"
+  <div class="max-w-7xl mx-auto relative">
+    <div class="blob top-0 left-24 max-lg:-top-20 max-lg:left-0"></div>
+    <div class="blob bottom-0 left-52 max-sm:right-0 max-lg:-bottom-20"></div>
+    <div class="blob top-0 right-0 max-md:hidden max-lg:-right-10"></div>
+    <LookingJob />
+    <h1
+      class="text-4xl min-[374px]:text-5xl sm:text-5xl md:text-7xl lg:text-9xl font-bold mt-6 mb-10"
     >
-      Ver Currículum
-    </a>
-    <MailCopy email={basics.email} name={basics.name} />
+      Desarrollador Frontend<span class="text-blue-400">.</span>
+    </h1>
+    <p class="mb-6 max-w-[60ch] mx-auto text-base sm:text-lg">
+      Desarrollo soluciones a problemáticas mediante software, con un stack
+      centrado en JavaScript. Resido en Antofagasta, Chile.
+    </p>
+    <div class="flex flex-wrap gap-4 justify-center">
+      <ButtonResume />
+      <MailCopy email={basics.email} name={basics.name} />
+    </div>
   </div>
-  <DownArrowIcon class="size-12 mx-auto mt-20 animate-down-arrow" />
 </section>
+
+<style>
+  .blob {
+    z-index: -1;
+    position: absolute;
+    background-image: linear-gradient(120deg, #34e0f0 0%, #b400ff 100%);
+    border-radius: 42% 58% 70% 30% / 45% 45% 55% 55%;
+    width: 150px;
+    height: 144px;
+    animation: morph 3s linear infinite;
+    transform-style: preserve-3d;
+    outline: 1px solid transparent;
+    will-change: border-radius;
+  }
+  .blob:before,
+  .blob:after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    border-radius: 42% 58% 70% 30% / 45% 45% 55% 55%;
+    box-shadow: 5px 5px 89px rgba(0, 102, 255, 0.21);
+    will-change: border-radius, transform, opacity;
+    animation-delay: 200ms;
+    background-image: linear-gradient(
+      120deg,
+      rgba(0, 67, 255, 0.55) 0%,
+      rgba(0, 103, 255, 0.89) 100%
+    );
+  }
+
+  .blob:before {
+    animation: morph 3s linear infinite;
+    opacity: 0.21;
+    animation-duration: 1.5s;
+  }
+
+  .blob:after {
+    animation: morph 3s linear infinite;
+    animation-delay: 400ms;
+    opacity: 0.89;
+    line-height: 120px;
+    text-indent: -21px;
+  }
+
+  @keyframes morph {
+    0%,
+    100% {
+      border-radius: 42% 58% 70% 30% / 45% 45% 55% 55%;
+      transform: translate3d(0, 0, 0) rotateZ(0.01deg);
+    }
+    34% {
+      border-radius: 70% 30% 46% 54% / 30% 29% 71% 70%;
+      transform: translate3d(0, 5px, 0) rotateZ(0.01deg);
+    }
+    50% {
+      opacity: 0.89;
+      transform: translate3d(0, 0, 0) rotateZ(0.01deg);
+    }
+    67% {
+      border-radius: 100% 60% 60% 100% / 100% 100% 60% 60%;
+      transform: translate3d(0, -3px, 0) rotateZ(0.01deg);
+    }
+  }
+</style>
