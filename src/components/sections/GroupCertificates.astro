@@ -1,0 +1,68 @@
+---
+import { certificates } from '@cv'
+import { Platzi } from '@icons/certificates/Platzi'
+import { Image } from 'astro:assets'
+import inacap from '@assets/inacap.png'
+---
+
+<div class="company-logo-container">
+  {
+    certificates.map(({ name, url, issuer, date }) => {
+      const year = new Date(date).getFullYear()
+      return (
+        <a
+          href={url}
+          target="_blank"
+          class="relative overflow-hidden min-w-max h-[100px] pl-6 pr-8 py-1 rounded-lg text-black dark:text-gray-100 bg-gray-200 dark:bg-zinc-900 flex items-center gap-3  duration-200"
+        >
+           <div class="absolute bottom-0 left-[-20%] right-0 top-[-10%] h-[500px] w-[500px] rounded-full bg-[radial-gradient(circle_farthest-side,rgba(147,197,253,.15),rgba(255,255,255,0))]"></div>
+           <div class="absolute bottom-0 right-[-20%] top-[-10%] h-[500px] w-[500px] rounded-full bg-[radial-gradient(circle_farthest-side,rgba(59,130,246,.15),rgba(255,255,255,0))]"></div>
+          {issuer === 'Platzi' ? (
+            <Platzi className="w-9 text-black dark:text-gray-200" />
+          ) : (
+            <Image src={inacap} alt='Logo Inacap' class='w-9 invert dark:invert-0' />
+          )}
+          <div>
+            <h3 class="text-lg">{name}</h3>
+            <p class="text-sm opacity-80">
+              {issuer} - <time>{year}</time>
+            </p>
+          </div>
+        </a>
+      )
+    })
+  }
+</div>
+
+<style scoped>
+  .company-logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4rem;
+    animation: company-logo-slide calc(var(--companies) * 3s) linear infinite;
+    -webkit-animation: company-logo-slide calc(var(--companies) * 3s) linear
+      infinite;
+    min-width: -moz-fit-content;
+    min-width: fit-content;
+  }
+  .company-logo-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 40px;
+    margin-inline-end: 40px;
+    unicode-bidi: isolate;
+  }
+
+  @keyframes company-logo-slide {
+    100% {
+      transform: translateX(0);
+    }
+    0% {
+      transform: translateX(calc(-100% - 4rem));
+    }
+  }
+</style>

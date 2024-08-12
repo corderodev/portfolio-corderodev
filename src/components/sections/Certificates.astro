@@ -1,33 +1,84 @@
 ---
-import { certificates } from '@cv'
-import { CertificateIcon } from '@icons/Certificate.tsx'
-
-const orderCertificates = (a, b) => new Date(b.date) - new Date(a.date)
-certificates.sort(orderCertificates)
+import GroupCertificates from '@components/sections/GroupCertificates.astro'
 ---
 
-<section class="my-20">
-  <h2 class="text-2xl font-semibold lg:text-3xl text-center mb-20">
-    Certificados
-  </h2>
-  <div
-    class="w-fit mx-auto mt-10 grid grid-cols-1 min-[400px]:grid-cols-2 gap-y-10 gap-x-14"
-  >
-    {
-      certificates.map(({ name, url, issuer, date }) => {
-        const year = new Date(date).getFullYear()
-        return (
-          <a href={url} class="group w-fit" target="_blank">
-            <h3 class="text-lg group-hover:underline decoration-blue-600 dark:decoration-blue-300 underline-offset-4">
-              {name}
-            </h3>
-            <p class="text-sm opacity-80">
-              {issuer} - <time>{year}</time>
-            </p>
-            <CertificateIcon class="size-2 ml-2 group-hover:decoration-blue-600 dark:decoration-blue-300" />
-          </a>
-        )
-      })
-    }
+<section
+  class="company-logo-list py-20"
+  style="--companies: 10;"
+>
+  <div class="px-4 text-center w-full mx-auto">
+    <h2 class="text-2xl sm:text-3xl font-bold text-center max-w-[60ch] mx-auto pb-12">
+      Certificaciones en desarrollo de software
+    </h2>
+  </div>
+  <div class="company-logo-slider my-16">
+    <GroupCertificates />
+    <GroupCertificates />
+    <GroupCertificates />
+    <GroupCertificates />
   </div>
 </section>
+
+<style scoped>
+  section {
+    display: block;
+    unicode-bidi: isolate;
+  }
+  .company-logo-list {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    margin: auto;
+  }
+  .company-logo-list:before {
+    left: 0;
+    top: 0;
+  }
+  .company-logo-list:after {
+    right: 0;
+    top: 0;
+    transform: rotate(180deg);
+  }
+  .company-logo-list:after,
+  .company-logo-list:before {
+    content: "";
+    height: 112px;
+    position: absolute;
+    width: 200px;
+    z-index: 2;
+  }
+  .company-logo-slider {
+    height: 50px;
+    display: flex;
+    max-height: 50px;
+    gap: 4rem;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+  }
+
+  .client-logo-list {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    margin: auto;
+    padding: 1rem 0;
+  }
+  .client-logo-list:before {
+    left: 0;
+    top: 0;
+  }
+  .client-logo-list:after {
+    right: 0;
+    top: 0;
+    transform: rotate(180deg);
+  }
+  .client-logo-list:after,
+  .client-logo-list:before {
+    content: "";
+    height: 112px;
+    position: absolute;
+    width: 200px;
+    z-index: 2;
+  }
+</style>
