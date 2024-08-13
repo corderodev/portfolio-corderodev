@@ -39,13 +39,12 @@
     {
       "name": "Diprofire Chile Ltda.",
       "position": "Analista de Sistemas",
-      "startDate": "2024-07",
+      "startDate": "2024-06",
       "endDate": null,
       "type": "Jornada Completa",
       "summary": [
         "Desarrollo y puesta en producción de nueva web empresarial con Next.js, React, Vercel, Algolia y Wordpress Headless CMS.",
-        "Implementación de Playwright para automatización de pruebas y verificación de calidad.",
-        "Implementación de aplicaciones de escrito con Electron para la automatización de procesos internos."
+        "Implementación de Playwright para automatización de pruebas y verificación de calidad."
       ],
       "link": "https://diprofire.cl"
     },
@@ -67,7 +66,7 @@
       "name": "Diprofire Chile Ltda.",
       "position": "Analista de Sistemas",
       "startDate": "2023-03",
-      "endDate": "2023-05",
+      "endDate": "2023-07",
       "type": "Jornada Parcial",
       "summary": [
         "Mantenimiento de web empresarial con Wordpress y Woocommerce.",
