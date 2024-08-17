@@ -12,7 +12,7 @@ const { education } = Astro.props;
 ---
 
 <section class="CvEducation">
-  <h2 class="text-xl font-semibold lg:text-2xl">Education</h2>
+  <h2 class="text-xl font-semibold lg:text-2xl">Educación</h2>
   {
     education.map(({ institution, startDate, endDate, area }) => {
       const startYear = new Date(startDate).getFullYear()
