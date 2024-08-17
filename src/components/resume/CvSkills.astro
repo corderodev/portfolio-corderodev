@@ -14,6 +14,8 @@ import { Express } from '@icons/skills/Express.tsx'
 import { Postgresql } from '@icons/skills/Postgresql.tsx'
 import { Sqlite } from '@icons/skills/Sqlite'
 import { Playwright } from '@icons/skills/Playwright'
+import { Jest } from '@icons/skills/Jest'
+import { TestingLibrary } from '@icons/skills/TestingLibrary'
 
 const SKILLS_ICONS: Record<string, any> = {
   Html,
@@ -30,6 +32,8 @@ const SKILLS_ICONS: Record<string, any> = {
   Sqlite,
   Git,
   Github,
+  Jest,
+  TestingLibrary,
   Playwright
 }
 
@@ -51,6 +55,7 @@ const { skills } = Astro.props;
           name === 'Astro' ? 'AstroIcon' : 
           name === 'Node.js' ? 'Node' : 
           name === 'Tailwind Css' ? 'Tailwind' :
+          name === 'Testing Library' ? 'TestingLibrary' :
           name === 'SQLite' ? 'Sqlite' : name
         const Icon = SKILLS_ICONS[iconName]
         return (

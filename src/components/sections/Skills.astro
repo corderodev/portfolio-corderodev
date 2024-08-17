@@ -15,6 +15,8 @@ import { Postgresql } from '@icons/skills/Postgresql.tsx'
 import { Playwright } from '@icons/skills/Playwright.tsx'
 import { Sqlite } from '@icons/skills/Sqlite'
 import { skills } from '@cv'
+import { Jest } from '@icons/skills/Jest'
+import { TestingLibrary } from '@icons/skills/TestingLibrary'
 
 const SKILLS_ICONS: Record<string, any> = {
   Html,
@@ -31,27 +33,36 @@ const SKILLS_ICONS: Record<string, any> = {
   Sqlite,
   Git,
   Github,
-  Playwright
+  Jest,
+  TestingLibrary,
+  Playwright,
 };
 ---
 
 <div class="py-20 px-4 max-w-[60ch] mx-auto">
-  <h3 class="text-2xl font-bold max-w-[60ch] mx-auto pb-12 text-center lg:text-start">
+  <h3
+    class="text-2xl font-bold max-w-[60ch] mx-auto pb-12 text-center lg:text-start"
+  >
     Conocimientos
   </h3>
   <ul class="w-fit flex flex-wrap gap-4">
     {
       skills.map(({ name }) => {
         const iconName =
-          name === 'Next.js' ? 'Next' : 
+        name === 'Next.js' ? 'Next' : 
           name === 'React Native' ? 'React' : 
           name === 'Astro' ? 'AstroIcon' : 
           name === 'Node.js' ? 'Node' : 
           name === 'Tailwind Css' ? 'Tailwind' :
+          name === 'Testing Library' ? 'TestingLibrary' :
           name === 'SQLite' ? 'Sqlite' : name
         const Icon = SKILLS_ICONS[iconName]
         return (
-          <li class={'flex items-center space-x-2 rounded-md px-4 py-1 bg-gray-200 dark:bg-zinc-800'}>
+          <li
+            class={
+              'flex items-center space-x-2 rounded-md px-4 py-1 bg-gray-200 dark:bg-zinc-800'
+            }
+          >
             {Icon && <Icon class="size-5 fill-zinc-700 dark:fill-zinc-300" />}
             <span class="text-lg uppercase mt-0.5">{name}</span>
           </li>
