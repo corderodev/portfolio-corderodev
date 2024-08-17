@@ -8,7 +8,6 @@ const {
   label,
   location,
   profiles,
-  phone,
   email,
   summary,
   disponibility,
@@ -16,9 +15,9 @@ const {
 const { city, region } = location
 
 const linkedInfo = profiles.find(({ network }: any) => network === 'LinkedIn')
-const linkedUrl = linkedInfo?.url
+const linkedUrl = linkedInfo?.shortUrl
 
-const printInfo = [email, phone, linkedUrl].filter(Boolean).join(' • ');
+const printInfo = [email, linkedUrl].filter(Boolean).join(' • ');
 ---
 
 <section id="CvHero">
