@@ -12,7 +12,6 @@ import { Next } from '@icons/skills/Next.tsx'
 import { AstroIcon } from '@icons/skills/Astro.tsx'
 import { Express } from '@icons/skills/Express.tsx'
 import { Postgresql } from '@icons/skills/Postgresql.tsx'
-import { Playwright } from '@icons/skills/Playwright.tsx'
 import { Sqlite } from '@icons/skills/Sqlite'
 import { skills } from '@cv'
 import { Jest } from '@icons/skills/Jest'
@@ -35,7 +34,6 @@ const SKILLS_ICONS: Record<string, any> = {
   Github,
   Jest,
   TestingLibrary,
-  Playwright,
 };
 ---
 
@@ -50,7 +48,6 @@ const SKILLS_ICONS: Record<string, any> = {
       skills.map(({ name }) => {
         const iconName =
         name === 'Next.js' ? 'Next' : 
-          name === 'React Native' ? 'React' : 
           name === 'Astro' ? 'AstroIcon' : 
           name === 'Node.js' ? 'Node' : 
           name === 'Tailwind Css' ? 'Tailwind' :

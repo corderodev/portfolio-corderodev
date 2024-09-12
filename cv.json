@@ -160,9 +160,6 @@
       "name": "Next.js"
     },
     {
-      "name": "React Native"
-    },
-    {
       "name": "Tailwind Css"
     },
     {
@@ -185,9 +182,6 @@
     },
     {
       "name": "Testing Library"
-    },
-    {
-      "name": "Playwright"
     }
   ],
   "languages": [
